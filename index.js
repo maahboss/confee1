@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Pusher = require('pusher');
 const app = express();
+const port = process.env.PORT || 3000;
 
 
 // Body parser middleware
@@ -36,6 +37,6 @@ app.post('/pusher/auth', (req, res) => {
 });
 
 //listen on the app
-app.listen(3000, () => {
-    return console.log('Server is up on 3000')
-});
+app.listen(port,() => {
+    console.log(`server is up on port: ${port}`);
+  });
